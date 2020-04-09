@@ -476,6 +476,23 @@ height:50vh;
 		document.write(1900+now.getYear()+"年"+(now.getMonth()+1)+"月"+now.getDate()+"日") 
 		</script> 
         <span id="hexo-power"><a href="https://bitrees.github.io/" target="_blank">❤ BiTree</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info"><a href="https://996.icu/#/zh_CN" target="_blank">996.ICU</a></span>
+	   <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+		<script>
+		    var now = new Date(); 
+		    function createtime() { 
+		        var grt= new Date("04/08/2020 00:00:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
+		        now.setTime(now.getTime()+250); 
+		        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+		        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+		        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+		        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+		        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+		        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+		        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+		        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+		    } 
+		setInterval("createtime()",250);
+		</script>
     </div>
     <!-- 不蒜子  -->
     
@@ -495,7 +512,7 @@ height:50vh;
     <ul class="sidebar-tabs sidebar-tabs-active-0">
         <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
         <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
-        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Love</span></li>
     </ul>
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
